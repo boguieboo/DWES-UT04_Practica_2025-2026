@@ -32,17 +32,18 @@ que permita a profesores crear y administrar diferentes tipos de tareas, y a alu
 
 
 ## Modelo: Tarea
-* [] ID
-* [] Título
-* [] Descripción
-* [] Fecha de creación
-* [] Fecha de entrega
-* [] Creador
-* [] Tipo de tarea: individual, grupal
-* [] Evaluable
-* [] Profesor evaluador
-* [] Alumnos participantes
-* [] Estado de la tarea
+* [x] ID
+* [x] Título
+* [x] Descripción
+* [x] Fecha de creación
+* [x] Fecha de entrega
+* [x] Tipo de tarea: individual, grupal
+* [x] Evaluable
+* [x] Profesor evaluador
+* [x] Alumnos participantes
+* [x] Estado de la tarea
+* [x] Creador
+
 
 
 

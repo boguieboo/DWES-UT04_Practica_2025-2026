@@ -17,12 +17,18 @@ que permita a profesores crear y administrar diferentes tipos de tareas, y a alu
 
 ## Listado de elementos a implementar
 ## Modelo: Alumno
-* [] id
-* []nombre 
-* []apellidos 
-* []email
-* []telefono 
+* [x] id
+* [x]nombre 
+* [x]apellidos 
+* [x]email
+* [x]telefono 
 
+## Modelo: Profesor
+* [x] id
+* [x]nombre 
+* [x]apellidos 
+* [x]email
+* [x]telefono 
 
 
 ## Modelo: Tarea
@@ -44,36 +50,18 @@ que permita a profesores crear y administrar diferentes tipos de tareas, y a alu
 
 
 
-
-
-* [x] IBAN (opcional, sólo si quiere domiciliación bancaria).
-* [x] Fecha de alta (auto).
-* Info tutor si es menor: DNI tutor, nombre tutor, apellidos tutor y teléfono.
-
-## Modelo: Dirección
-Modificamos la primera versión para añadir un modelo con la dirección:
-* Dirección con:
-    * [x] calle
-    * [x] número
-    * [x] piso / puerta / extras (texto libre tipo "2ºB esc. izquierda")
-    * [x] código postal
-    * [x] ciudad (localidad)
-    * [x] provincia
-    * [x] país
-
-## Modelo: Pago
-    * [X] Creado el modelo con los pagos de las cuotas
-
-## Vistas: Socio
-* [X] Mostrar el listado de todos los socios (sólo se muestra DNI, nombre y apellidos)
-* [X] Mostrar el detalle de un socio 
-
 ## Tareas a realizar
+Vistas
+* [] Vista en la que un alumno/profesor pueda ver sus datos.
+* [] Vista con el listado de todo el alumnado/profesorado.
+* [] Vista en la que un alumno puede ver todas las tareas que ha creado o colabora.
+* [] Vista en la que un profesor puede ver todas las tareas que requieren su validación.
 
-* [x] Actualizar el modelo de socios añadiendo tutores y roles
-* [ ] Genera vistas en dos formatos: usando el modelo completo y solo con parte de él
-* [X] Configurar la aplicación para utilizar Postgres ✓
-* [ ] Implementar herencia entre los tipos de socios 
-* [X] Formularios para crear un socio y validación de datos ✓
-* [ ]  
+Formularios
+* [] Formulario para el alta del alumnado/profesorado.
+* [] Formulario de creación de una tarea individual (puede necesitar o no evaluación de un profesor)
+* [] Formulario de creación de una tarea grupal (puede necesitar o no evaluación de un profesor)
+* [] 
+* [] 
+
 

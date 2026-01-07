@@ -44,7 +44,7 @@ que permita a profesores crear y administrar diferentes tipos de tareas, y a alu
 * [x] Estado de la tarea
 * [x] Creador
 
-
+He usado un modelo único de tarea para representar los tipos de tareas individual, grupal y evaluable.
 
 
 

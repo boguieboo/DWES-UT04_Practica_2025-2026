@@ -38,3 +38,12 @@ def alta_profesor(request):
         form = ProfesorForm()
     return render(request, 'tareas/alta_profesor.html', {'form': form})
 
+# Vista para listar todos los alumnos
+def listar_alumnos(request):
+    alumnos = Alumno.objects.all()
+    return render(request, 'tareas/listar_alumnos.html', {'alumnos': alumnos})
+
+# Vista para listar todos los profesores
+def listar_profesores(request):
+    profesores = Profesor.objects.all()
+    return render(request, 'tareas/listar_profesores.html', {'profesores': profesores}) 

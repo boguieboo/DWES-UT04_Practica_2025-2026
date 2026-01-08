@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listar Tareas</title>
+</head>
+<body>
+    <h1>Listar Tareas</h1>
+    <ul>
+        {% for tarea in tareas %}
+            <li><a href="{% url 'detalle_tarea' tarea.id %}">{{ tarea.titulo }}</a> - {{ tarea.descripcion }}</li>
+        {% empty %}
+            <li>No hay tareas disponibles.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'crear_tarea' %}">Crear Nueva Tarea</a>
+</body>
+</html>

@@ -1,8 +1,8 @@
 # tareas/views.py
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Alumno, Profesor
-from .forms import AlumnoForm, ProfesorForm
+from .models import Alumno, Profesor, Tarea
+from .forms import AlumnoForm, ProfesorForm, TareaForm
 
 
 # from django.http import HttpResponse
@@ -47,3 +47,26 @@ def listar_alumnos(request):
 def listar_profesores(request):
     profesores = Profesor.objects.all()
     return render(request, 'tareas/listar_profesores.html', {'profesores': profesores}) 
+
+# Vista para crear una tarea
+def crear_tarea(request):
+    if request.method == 'POST':
+        form = TareaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Tarea creada correctamente.")
+    else:
+        form = TareaForm()
+    return render(request, 'tareas/crear_tarea.html', {'form': form})
+
+# Vista para listar todas las tareas
+def listar_tareas(request):
+    tareas = Tarea.objects.all()
+    return render(request, 'tareas/listar_tareas.html', {'tareas': tareas}) 
+
+# Vista detalle de una tarea
+def detalle_tarea(request, tarea_id):
+    tarea = get_object_or_404(Tarea, id=tarea_id)
+    return render(request, 'tareas/detalle_tarea.html', {'tarea': tarea})   
+
+     

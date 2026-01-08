@@ -8,4 +8,7 @@ urlpatterns = [
     path('alta_profesor/', views.alta_profesor, name='alta_profesor'),
     path('listar_alumnos/', views.listar_alumnos, name='listar_alumnos'),
     path('listar_profesores/', views.listar_profesores, name='listar_profesores'),
+    path('crear_tarea/', views.crear_tarea, name='crear_tarea'),
+    path('listar_tareas/', views.listar_tareas, name='listar_tareas'),
+    path('tarea/<uuid:tarea_id>/', views.detalle_tarea, name='detalle_tarea'),
 ]

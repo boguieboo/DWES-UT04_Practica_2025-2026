@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalle de Tarea</title>
+</head>
+<body>
+    <h1>Detalle de Tarea</h1>
+    <p><strong>Título:</strong> {{ tarea.titulo }}</p>
+    <p><strong>Descripción:</strong> {{ tarea.descripcion }}</p>
+    <p><strong>Fecha de Creación:</strong> {{ tarea.fecha_creacion }}</p>
+    <p><strong>Fecha de Entrega:</strong> {{ tarea.fecha_entrega }}</p>
+    <p><strong>Estado:</strong> {{ tarea.estado }}</p>
+    <p><strong>Tipo:</strong> {{ tarea.tipo }}</p>
+    <p><strong>Evaluable:</strong> {{ tarea.evaluable }}</p>
+    <p><strong>Profesor Evaluador:</strong> {{ tarea.profesor_evaluador.nombre }}</p>
+    <p><strong>Alumnos que Participan:</strong></p>
+    <ul>
+        {% for alumno in tarea.alumnos.all %}
+            <li>{{ alumno.nombre }}</li>
+        {% empty %}
+            <li>No hay alumnos asignados a esta tarea.</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Creador de la Tarea:</strong> {{ tarea.creador_alumno.nombre }}</p>
+    <p><strong>Profesor Creador:</strong> {{ tarea.creador_profesor.nombre }}</p>   
+    
+
+   
+    <a href="{% url 'listar_tareas' %}">Volver a la lista de tareas</a>
+</body>
+</html>

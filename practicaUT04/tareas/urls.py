@@ -11,4 +11,6 @@ urlpatterns = [
     path('crear_tarea/', views.crear_tarea, name='crear_tarea'),
     path('listar_tareas/', views.listar_tareas, name='listar_tareas'),
     path('tarea/<uuid:tarea_id>/', views.detalle_tarea, name='detalle_tarea'),
+    path('alumno/<uuid:alumno_id>/tareas/', views.tareas_del_alumno, name='tareas_alumno'),
+    path('profesor/<uuid:profesor_id>/tareas/', views.tareas_a_evaluar, name='tareas_profesor'),
 ]

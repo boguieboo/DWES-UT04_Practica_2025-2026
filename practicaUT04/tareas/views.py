@@ -69,4 +69,40 @@ def detalle_tarea(request, tarea_id):
     tarea = get_object_or_404(Tarea, id=tarea_id)
     return render(request, 'tareas/detalle_tarea.html', {'tarea': tarea})   
 
-     
+# Vista en la que un alumno puede ver sus tareas asignadas    
+def tareas_del_alumno(request, alumno_id):
+    alumno = get_object_or_404(Alumno, id=alumno_id)
+
+    # Tareas creadas por el alumno
+    tareas_creadas = alumno.tareas_creadas.all()
+
+    # Tareas donde el alumno participa
+    tareas_participa = alumno.tareas_participa.all()
+
+    # Unimos ambas listas y evitamos duplicados
+    tareas = (tareas_creadas | tareas_participa).distinct()
+
+    return render(
+        request,
+        'tareas/tareas_alumno.html',
+        {
+            'alumno': alumno,
+            'tareas': tareas
+        }
+    )
+
+# Vista en la que un profesor puede ver todas las tareas que requieren su validación
+def tareas_a_evaluar(request, profesor_id):
+    profesor = get_object_or_404(Profesor, id=profesor_id)
+
+    # Tareas que el profesor debe evaluar
+    tareas = Tarea.objects.filter(profesor_evaluador=profesor, evaluable=True)
+
+    return render(
+        request,
+        'tareas/tareas_profesor.html',
+        {
+            'profesor': profesor,
+            'tareas': tareas
+        }
+    )   
